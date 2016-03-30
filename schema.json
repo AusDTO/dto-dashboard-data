@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "!id": "https://gov.au/performance/schema",
   "type": "object",
-  "description": "An explanation about the puropose of this instance described by this schema.",
+  "description": "Draft Format for describing data for dashboards",
   "name": "/",
   "definitions": {
     "recorded_at": {
