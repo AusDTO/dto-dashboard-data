@@ -38,7 +38,7 @@
       "allOf": [
         { "$ref": "#/definitions/abstract_measurement" },
         { "properties": {
-          "type": { "type": "string", "enum": ["number"] },
+          "type": { "type": "string", "enum": ["numeric"] },
         }}
       ],
       "additionalFields": false
