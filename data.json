@@ -1,0 +1,83 @@
+{
+  "agency":       "DIBP",
+  "app":          "Citizenship",
+  "updated_at":   "2016-01-01T01:01:01.111Z",
+  "metric ":      "Applying for Australian Citizenship",
+  "measurements": [
+    {
+      "name":           "costs-saved-transaction",
+      "recorded_at":    "2016-01-01T01:01:01.111Z",
+      "channel":        "online",
+      "value":          0.99,
+      "units":          "dollars",
+      "type":           "number",
+      "tags":           ["foo", "blah"]
+    },
+    {
+      "name":           "arbitrary-number",
+      "recorded_at":    "2016-01-01T01:01:01.111Z",
+      "channel":        "online",
+      "value":          13,
+      "units":          "blah",
+      "type":           "number"
+    },
+    {
+      "name":           "costs-saved-annual",
+      "recorded_at":    "2016-01-01T01:01:01.111Z",
+      "channel":        "online",
+      "value":          3000,
+      "units":          "dollars",
+      "type":           "number"
+    },
+    {
+      "name":           "time-per-transaction",
+      "recorded_at":    "2016-01-01T01:01:01.111Z",
+      "channel":        "online",
+      "value":          3,
+      "units":          "minutes",
+      "type":           "number"
+    },
+    {
+      "name":           "time-per-transaction",
+      "recorded_at":    "2016-01-01T01:01:01.111Z",
+      "channel":        "email",
+      "value":          7,
+      "units":          "minutes",
+      "type":           "number"
+    },
+    {
+      "name":           "users-satisfied",
+      "recorded_at":    "2016-01-01T01:01:01.111Z",
+      "channel":        "online",
+      "value":          29,
+      "numerator":      29,
+      "denominator":    100,
+      "units":          "users",
+      "units":          "percentage",
+      "type":           "number"
+    },
+    {
+      "name":           "completion-rate",
+      "recorded_at":    "2016-01-01T01:01:01.111Z",
+      "channel":        "online",
+      "value":          42,
+      "numerator":      42,
+      "denominator":    100,
+      "units":          "users",
+      "units":          "percentage",
+      "type":           "number"
+    }
+  ],
+  "events": [
+    {
+      "name":           "Updated landing page",
+      "measurements":   ["costs-saved"],
+      "recorded_at":    "2016-01-01T01:01:01.111Z",
+      "description":    "...",
+      "tags":           ["foo", "blah"]
+    }
+  ],
+  "meta_data": {
+    "description": "..."
+  }
+}

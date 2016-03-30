@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "!id": "https://gov.au/performance/schema",
+  "type": "object",
+  "description": "An explanation about the puropose of this instance described by this schema.",
+  "name": "/",
+  "definitions": {
+    "recorded_at": {
+      "type": "string",
+      "format": "date-time",
+      "name": "recorded_at",
+      "description": "The datetime the measurement was recorded. JSON datetime format (YY-MM-DDTHH:MM:SS.sssZ).",
+    },
+    "tags": {
+      "type": "array",
+      "name": "tags",
+      "description": "An array of arbitrary tags.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "abstract_measurement": {
+      "type": "object",
+      "name": "abstract_measurement",
+      "properties": {
+        "name":         { "type": "string" },
+        "recorded_at":  { "$ref": "#/definitions/recorded_at" },
+        "value":        { "type": "number" },
+        "units":        { "type": "string" },
+        "channel":      { "type": "string", "enum": ["email", "online", "phone", "post", "shopfront"] },
+        "tags":         { "$ref": "#/definitions/tags" },
+      },
+      "required": ["name", "recorded_at", "value", "units", "type"],
+    },
+    "numeric_measurement": {
+      "type": "object",
+      "name": "measurement",
+      "allOf": [
+        { "$ref": "#/definitions/abstract_measurement" },
+        { "properties": {
+          "type": { "type": "string", "enum": ["number"] },
+        }}
+      ],
+      "additionalFields": false
+    },
+    "percentage_measurement": {
+      "type": "object",
+      "name": "percentage_measurement",
+      "allOf": [
+        { "$ref": "#/definitions/abstract_measurement" },
+        { "properties": {
+          "numerator":    { "type": "number" },
+          "denominator":  { "type": "number" },
+          "type":         { "type": "string", "enum": ["percentage"] },
+        }}
+      ],
+      "required": ["numerator", "denominator"],
+      "additionalFields": false
+    }
+  },
+  "properties": {
+    "agency": {
+      "type": "string",
+      "description": "The name of the agency who owns the data.",
+      "name": "agency"
+    },
+    "app": {
+      "type": "string",
+      "description": "The name of the app originating the data.",
+      "name": "app"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The datetime the document was updated. JSON datetime format (YY-MM-DDTHH:MM:SS.sssZ).",
+      "name": "updated_at"
+    },
+    "metric ": {
+      "type": "string",
+      "description": "The name of the metric.",
+      "name": "metric"
+    },
+    "measurements": {
+      "type": "array",
+      "description": "An array of measurements.",
+      "name": "measurements",
+      "items": {
+        "anyOf": [
+          { "$ref": "#/definitions/percentage_measurement" },
+          { "$ref": "#/definitions/numeric_measurement" }
+        ]
+      },
+    },
+    "events": {
+      "type": "array",
+      "description": "An explanation about the puropose of this instance described by this schema.",
+      "name": "events",
+      "items": {
+        "type": "object",
+        "description": "Describes a service event that can be used to provide context for measurements.",
+        "name": "item",
+        "required": [ "name", "recorded_at", "description" ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the event.",
+            "name": "name"
+          },
+          "measurements": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "recorded_at":  { "$ref": "#/definitions/recorded_at" },
+          "tags":         { "$ref": "#/definitions/tags" },
+          "description": {
+            "type": "string",
+            "description": "A detailed description of the event.",
+            "name": "description"
+          },
+
+        }
+      }
+    }
+  },
+  "required": [
+    "agency",
+    "app",
+    "updated_at",
+    "metric ",
+    "measurements",
+    "events"
+  ]
+}
