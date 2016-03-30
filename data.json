@@ -10,7 +10,7 @@
       "channel":        "online",
       "value":          0.99,
       "units":          "dollars",
-      "type":           "number",
+      "type":           "numeric",
       "tags":           ["foo", "blah"]
     },
     {
@@ -19,7 +19,7 @@
       "channel":        "online",
       "value":          13,
       "units":          "blah",
-      "type":           "number"
+      "type":           "numeric"
     },
     {
       "name":           "costs-saved-annual",
@@ -27,7 +27,7 @@
       "channel":        "online",
       "value":          3000,
       "units":          "dollars",
-      "type":           "number"
+      "type":           "numeric"
     },
     {
       "name":           "time-per-transaction",
@@ -35,7 +35,7 @@
       "channel":        "online",
       "value":          3,
       "units":          "minutes",
-      "type":           "number"
+      "type":           "numeric"
     },
     {
       "name":           "time-per-transaction",
@@ -43,7 +43,7 @@
       "channel":        "email",
       "value":          7,
       "units":          "minutes",
-      "type":           "number"
+      "type":           "numeric"
     },
     {
       "name":           "users-satisfied",
@@ -54,7 +54,7 @@
       "denominator":    100,
       "units":          "users",
       "units":          "percentage",
-      "type":           "number"
+      "type":           "numeric"
     },
     {
       "name":           "completion-rate",
@@ -65,7 +65,7 @@
       "denominator":    100,
       "units":          "users",
       "units":          "percentage",
-      "type":           "number"
+      "type":           "numeric"
     }
   ],
   "events": [
