@@ -37,7 +37,9 @@ The dashboard is responsible for presentation.
 ### Questions
 
  - [ ] Does this even work as an idea?
- - [ ] Do we need `channel`? Could this be a tag?
+ - [ ] Should we just use timestamp integers rather than JSON format dates?
+ - [ ] Do we need `channel`? 
+ - [ ] Could this be a tag, and we break data by tag with some sane default views that use tags in useful ways?
  - [ ] How do we map from data to presentation?
  - [ ] Should minimal presentation information be added as an  meta description?
  - [ ] Could the units be split out into a meta description?
