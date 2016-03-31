@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "!id": "https://gov.au/performance/schema",
   "type": "object",
   "description": "Draft Format for describing data for dashboards",
   "name": "/",
@@ -59,6 +58,11 @@
     }
   },
   "properties": {
+    "version": {
+      "type": "string",
+      "description": "The version of the dashboard schema to be used",
+      "enum": ["0.0.1"]
+    },
     "agency": {
       "type": "string",
       "description": "The name of the agency who owns the data.",
@@ -125,6 +129,7 @@
     }
   },
   "required": [
+    "version",
     "agency",
     "app",
     "updated_at",
