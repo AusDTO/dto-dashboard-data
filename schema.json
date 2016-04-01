@@ -68,9 +68,9 @@
       "description": "The name of the agency who owns the data.",
       "name": "agency"
     },
-    "app": {
+    "service": {
       "type": "string",
-      "description": "The name of the app originating the data.",
+      "description": "The name of the origin service.",
       "name": "app"
     },
     "updated_at": {
@@ -131,7 +131,7 @@
   "required": [
     "version",
     "agency",
-    "app",
+    "service",
     "updated_at",
     "metric ",
     "measurements",
