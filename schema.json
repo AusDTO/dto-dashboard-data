@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "description": "Draft Format for describing data for dashboards",
-  "name": "/",
+  "name": "Dashboard Data",
   "definitions": {
     "recorded_at": {
       "type": "string",
@@ -132,8 +132,9 @@
     "version",
     "agency",
     "service",
+    "transition",
+    "metric",
     "updated_at",
-    "metric ",
     "measurements",
     "events"
   ]

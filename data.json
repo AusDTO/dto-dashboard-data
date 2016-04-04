@@ -2,9 +2,11 @@
 
   "version":      "0.0.1",
   "agency":       "DIBP",
-  "service":          "Citizenship",
+  "service":      "Citizenship",
+  "transition":   "Applying for Australian Citizenship",
+  "metric":       "Reschedule Appointment",
+  "related"       "",
   "updated_at":   "2016-01-01T01:01:01.111Z",
-  "metric ":      "Applying for Australian Citizenship",
   "measurements": [
     {
       "name":           "costs-saved-transaction",
