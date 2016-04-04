@@ -3,12 +3,12 @@
   "version":      "0.0.1",
   "updated_at":   "2016-01-01T01:01:01.111Z",
   "agency":       "DIBP",
-  "metrics": [
+  "????": [
     {
       "service": "Applying for Australian Citizenship",
       "metric":       "Reschedule Appointment",
-      "related":       "as",
-      "measurements": [
+      "related":       "????",
+      "metrics": [
         {
           "name":           "costs-saved-transaction",
           "recorded_at":    "2016-01-01T01:01:01.111Z",
@@ -78,7 +78,7 @@
   "events": [
     {
       "name":           "Updated landing page",
-      "measurements":   ["costs-saved"],
+      "service":        ["costs-saved"],
       "recorded_at":    "2016-01-01T01:01:01.111Z",
       "description":    "...",
       "tags":           ["foo", "blah"]
@@ -86,5 +86,10 @@
   ],
   "meta_data": {
     "description": "..."
+
+    service
+      measurement
+        metric
+
   }
 }

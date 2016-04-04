@@ -18,7 +18,7 @@
         "type": "string"
       }
     },
-    "metric": {
+    "????": {
       "type": "object",
       "name": "metric",
       "properties": {
@@ -38,16 +38,16 @@
           "name": "measurements",
           "items": {
             "anyOf": [
-              { "$ref": "#/definitions/percentage_measurement" },
-              { "$ref": "#/definitions/numeric_measurement" }
+              { "$ref": "#/definitions/percentage_metric" },
+              { "$ref": "#/definitions/numeric_metric" }
             ]
           },
         }
       }
     },
-    "abstract_measurement": {
+    "abstract_metric": {
       "type": "object",
-      "name": "abstract_measurement",
+      "name": "abstract_metric",
       "properties": {
         "name":         { "type": "string" },
         "recorded_at":  { "$ref": "#/definitions/recorded_at" },
@@ -58,22 +58,22 @@
       },
       "required": ["name", "recorded_at", "value", "units", "type"],
     },
-    "numeric_measurement": {
+    "numeric_metric": {
       "type": "object",
       "name": "measurement",
       "allOf": [
-        { "$ref": "#/definitions/abstract_measurement" },
+        { "$ref": "#/definitions/abstract_metric" },
         { "properties": {
           "type": { "type": "string", "enum": ["numeric"] },
         }}
       ],
       "additionalFields": false
     },
-    "percentage_measurement": {
+    "percentage_metric": {
       "type": "object",
-      "name": "percentage_measurement",
+      "name": "percentage_metric",
       "allOf": [
-        { "$ref": "#/definitions/abstract_measurement" },
+        { "$ref": "#/definitions/abstract_metric" },
         { "properties": {
           "numerator":    { "type": "number" },
           "denominator":  { "type": "number" },
@@ -101,13 +101,13 @@
       "description": "The datetime the document was updated. JSON datetime format (YY-MM-DDTHH:MM:SS.sssZ).",
       "name": "updated_at"
     },
-    "metrics": {
+    "?????": {
       "type": "array",
       "description": "An array of service metrics.",
-      "name": "metric",
+      "name": "????",
       "items": {
         "oneOf": [
-          { "$ref": "#/definitions/metric" }
+          { "$ref": "#/definitions/????" }
         ]
       },
     }
