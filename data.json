@@ -1,75 +1,78 @@
 {
 
   "version":      "0.0.1",
-  "agency":       "DIBP",
-  "service":      "Citizenship",
-  "transition":   "Applying for Australian Citizenship",
-  "metric":       "Reschedule Appointment",
-  "related"       "",
   "updated_at":   "2016-01-01T01:01:01.111Z",
-  "measurements": [
+  "agency":       "DIBP",
+  "metrics": [
     {
-      "name":           "costs-saved-transaction",
-      "recorded_at":    "2016-01-01T01:01:01.111Z",
-      "channel":        "online",
-      "value":          0.99,
-      "units":          "dollars",
-      "type":           "numeric",
-      "tags":           ["foo", "blah"]
-    },
-    {
-      "name":           "arbitrary-number",
-      "recorded_at":    "2016-01-01T01:01:01.111Z",
-      "channel":        "online",
-      "value":          13,
-      "units":          "blah",
-      "type":           "numeric"
-    },
-    {
-      "name":           "costs-saved-annual",
-      "recorded_at":    "2016-01-01T01:01:01.111Z",
-      "channel":        "online",
-      "value":          3000,
-      "units":          "dollars",
-      "type":           "numeric"
-    },
-    {
-      "name":           "time-per-transaction",
-      "recorded_at":    "2016-01-01T01:01:01.111Z",
-      "channel":        "online",
-      "value":          3,
-      "units":          "minutes",
-      "type":           "numeric"
-    },
-    {
-      "name":           "time-per-transaction",
-      "recorded_at":    "2016-01-01T01:01:01.111Z",
-      "channel":        "email",
-      "value":          7,
-      "units":          "minutes",
-      "type":           "numeric"
-    },
-    {
-      "name":           "users-satisfied",
-      "recorded_at":    "2016-01-01T01:01:01.111Z",
-      "channel":        "online",
-      "value":          29,
-      "numerator":      29,
-      "denominator":    100,
-      "units":          "users",
-      "units":          "percentage",
-      "type":           "numeric"
-    },
-    {
-      "name":           "completion-rate",
-      "recorded_at":    "2016-01-01T01:01:01.111Z",
-      "channel":        "online",
-      "value":          42,
-      "numerator":      42,
-      "denominator":    100,
-      "units":          "users",
-      "units":          "percentage",
-      "type":           "numeric"
+      "service": "Applying for Australian Citizenship",
+      "metric":       "Reschedule Appointment",
+      "related":       "as",
+      "measurements": [
+        {
+          "name":           "costs-saved-transaction",
+          "recorded_at":    "2016-01-01T01:01:01.111Z",
+          "channel":        "online",
+          "value":          0.99,
+          "units":          "dollars",
+          "type":           "numeric",
+          "tags":           ["foo", "blah"]
+        },
+        {
+          "name":           "arbitrary-number",
+          "recorded_at":    "2016-01-01T01:01:01.111Z",
+          "channel":        "online",
+          "value":          13,
+          "units":          "blah",
+          "type":           "numeric"
+        },
+        {
+          "name":           "costs-saved-annual",
+          "recorded_at":    "2016-01-01T01:01:01.111Z",
+          "channel":        "online",
+          "value":          3000,
+          "units":          "dollars",
+          "type":           "numeric"
+        },
+        {
+          "name":           "time-per-transaction",
+          "recorded_at":    "2016-01-01T01:01:01.111Z",
+          "channel":        "online",
+          "value":          3,
+          "units":          "minutes",
+          "type":           "numeric"
+        },
+        {
+          "name":           "time-per-transaction",
+          "recorded_at":    "2016-01-01T01:01:01.111Z",
+          "channel":        "email",
+          "value":          7,
+          "units":          "minutes",
+          "type":           "numeric"
+        },
+        {
+          "name":           "users-satisfied",
+          "recorded_at":    "2016-01-01T01:01:01.111Z",
+          "channel":        "online",
+          "value":          29,
+          "numerator":      29,
+          "denominator":    100,
+          "units":          "users",
+          "units":          "percentage",
+          "type":           "numeric"
+        },
+        {
+          "name":           "completion-rate",
+          "recorded_at":    "2016-01-01T01:01:01.111Z",
+          "channel":        "online",
+          "value":          42,
+          "numerator":      42,
+          "denominator":    100,
+          "units":          "users",
+          "units":          "percentage",
+          "type":           "numeric"
+        }
+      ]
     }
   ],
   "events": [
