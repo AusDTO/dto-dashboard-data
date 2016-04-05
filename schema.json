@@ -1,7 +1,5 @@
-
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
   "description": "Draft Format for describing data for dashboards",
   "name": "Dashboard Data",
   "definitions": {
@@ -9,7 +7,7 @@
       "type": "string",
       "format": "date-time",
       "name": "recorded_at",
-      "description": "The datetime the measurement was recorded. JSON datetime format (YY-MM-DDTHH:MM:SS.sssZ).",
+      "description": "The datetime the measurement was recorded. JSON datetime format (YY-MM-DDTHH:MM:SS.sssZ)."
     },
     "tags": {
       "type": "array",
@@ -43,7 +41,7 @@
           }
         }
       },
-      "required": ["name", "recorded_at", "data"],
+      "required": ["name", "recorded_at", "data"]
     }
   },
   "properties": {
