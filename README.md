@@ -24,7 +24,7 @@ The order of metrics in the array defines the order of display on the dashboard.
 
 All historic data for display should be provided in the metric data.
 
-At the moment the only supported metric type is a bar chart.
+At the moment the only supported metric types are bar and line charts.
 
 A bar chart metric is defined as an array of label/value pairs.
 
