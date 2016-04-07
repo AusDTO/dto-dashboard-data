@@ -1,4 +1,5 @@
 {
+
   "version":      "1",
   "updated_at":   "2016-01-01T01:01:01.111Z",
   "agency":       "DIBP",
@@ -11,27 +12,24 @@
       "name":           "user-satisfaction",
       "description":    "% of users reporting satisfaction",
       "recorded_at":    "2016-01-01T01:01:01.111Z",
-      "type":           "bar",
-      "period":         "monthly",
       "data": [
-          {"label": "Dec 2015", "value": "50%"},
-          {"label": "Jan 2016", "value": "20%"},
-          {"label": "Feb 2016", "value": "30%"},
-          {"label": "Mar 2016", "value": "40%"}
-      ]
+          {"Dec 2015": "50%", "Jan 2016": "20%"},
+          {"Feb 2016": "30%"},
+          {"Mar 2016": "40%"},
+      ],
+      "period":         "monthly"
     },
     {
       "name":           "cost-per-transaction",
       "description":    "$ cost per transaction",
       "recorded_at":    "2016-01-01T01:01:01.111Z",
-      "type":           "bar",
-      "period":         "monthly",
       "data": [
-        {"label": "Dec 2015", "value": "50%"},
-        {"label": "Jan 2016", "value": "20%"},
-        {"label": "Feb 2016", "value": "30%"},
-        {"label": "Mar 2016", "value": "40%"}
-      ]
+        {"Dec 2015": "50%"},
+        {"Jan 2016": "20%"},
+        {"Feb 2016": "30%"},
+        {"Mar 2016": "40%"},
+      ],
+      "period":         "monthly"
     }
   ]
 }

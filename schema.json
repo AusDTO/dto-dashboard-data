@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
   "description": "Draft Format for describing data for dashboards",
   "name": "Dashboard Data",
   "definitions": {
@@ -8,7 +7,7 @@
       "type": "string",
       "format": "date-time",
       "name": "recorded_at",
-      "description": "The datetime the measurement was recorded. JSON datetime format (YY-MM-DDTHH:MM:SS.sssZ).",
+      "description": "The datetime the measurement was recorded. JSON datetime format (YY-MM-DDTHH:MM:SS.sssZ)."
     },
     "tags": {
       "type": "array",
@@ -18,88 +17,69 @@
         "type": "string"
       }
     },
+    "type": {
+      "type": "string",
+      "name": "type",
+      "description": "The type of chart to display.",
+      "enum": ["bar"]
+    },
+    "datum": {
+      "type": "object",
+      "name": "datum",
+      "minProperties": 1,
+      "properties": {
+        "label": { "type": "string" },
+        "value": { "type": "string" }
+      }
+    },
     "metric": {
       "type": "object",
       "name": "metric",
       "properties": {
-        "service": {
-          "type": "string",
-          "description": "The name of the origin service.",
-          "name": "app"
-        },
-        "metric ": {
-          "type": "string",
-          "description": "The name of the metric.",
-          "name": "metric"
-        },
-        "measurements": {
-          "type": "array",
-          "description": "An array of measurements.",
-          "name": "measurements",
-          "items": {
-            "anyOf": [
-              { "$ref": "#/definitions/percentage_measurement" },
-              { "$ref": "#/definitions/numeric_measurement" }
-            ]
-          },
-        }
-      }
-    },
-    "abstract_measurement": {
-      "type": "object",
-      "name": "abstract_measurement",
-      "properties": {
         "name":         { "type": "string" },
+        "description":  { "type": "string" },
         "recorded_at":  { "$ref": "#/definitions/recorded_at" },
-        "value":        { "type": "number" },
-        "units":        { "type": "string" },
-        "channel":      { "type": "string", "enum": ["email", "online", "phone", "post", "shopfront"] },
+        "period":       { "type": "string", "enum": ["daily", "weekly", "monthly"]},
         "tags":         { "$ref": "#/definitions/tags" },
+        "type":         { "$ref": "#/definitions/type" },
+        "data":         {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              { "$ref": "#/definitions/datum" }
+            ]
+          }
+        }
       },
-      "required": ["name", "recorded_at", "value", "units", "type"],
-    },
-    "numeric_measurement": {
-      "type": "object",
-      "name": "measurement",
-      "allOf": [
-        { "$ref": "#/definitions/abstract_measurement" },
-        { "properties": {
-          "type": { "type": "string", "enum": ["numeric"] },
-        }}
-      ],
-      "additionalFields": false
-    },
-    "percentage_measurement": {
-      "type": "object",
-      "name": "percentage_measurement",
-      "allOf": [
-        { "$ref": "#/definitions/abstract_measurement" },
-        { "properties": {
-          "numerator":    { "type": "number" },
-          "denominator":  { "type": "number" },
-          "type":         { "type": "string", "enum": ["percentage"] },
-        }}
-      ],
-      "required": ["numerator", "denominator"],
-      "additionalFields": false
+      "required": ["name", "recorded_at", "type",  "data"]
     }
   },
   "properties": {
     "version": {
       "type": "string",
       "description": "The version of the dashboard schema to be used",
-      "enum": ["0.0.1"]
-    },
-    "agency": {
-      "type": "string",
-      "description": "The name of the agency who owns the data.",
-      "name": "agency"
+      "enum": ["1"]
     },
     "updated_at": {
       "type": "string",
       "format": "date-time",
       "description": "The datetime the document was updated. JSON datetime format (YY-MM-DDTHH:MM:SS.sssZ).",
       "name": "updated_at"
+    },
+    "agency": {
+      "type": "string",
+      "description": "The name of the agency who owns the data.",
+      "name": "agency"
+    },
+    "service": {
+      "type": "string",
+      "description": "The name of the service",
+      "name": "Service"
+    },
+    "interaction": {
+      "type": "string",
+      "description": "The name of the interacton this data applies to.",
+      "name": "agency"
     },
     "metrics": {
       "type": "array",
@@ -109,39 +89,6 @@
         "oneOf": [
           { "$ref": "#/definitions/metric" }
         ]
-      },
-    }
-    },
-    "events": {
-      "type": "array",
-      "description": "An explanation about the puropose of this instance described by this schema.",
-      "name": "events",
-      "items": {
-        "type": "object",
-        "description": "Describes a service event that can be used to provide context for measurements.",
-        "name": "item",
-        "required": [ "name", "recorded_at", "description" ],
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "The name of the event.",
-            "name": "name"
-          },
-          "measurements": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "recorded_at":  { "$ref": "#/definitions/recorded_at" },
-          "tags":         { "$ref": "#/definitions/tags" },
-          "description": {
-            "type": "string",
-            "description": "A detailed description of the event.",
-            "name": "description"
-          },
-
-        }
       }
     }
   },
@@ -150,7 +97,9 @@
     "updated_at",
     "agency",
     "service",
-    "metrics",
-    "events"
+    "interaction",
+    "activity",
+    "url",
+    "metrics"
   ]
 }
