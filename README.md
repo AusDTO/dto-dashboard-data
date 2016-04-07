@@ -8,7 +8,15 @@ We use and recommend [jsonschemavalidator.net](http://www.jsonschemavalidator.ne
 
 A test endpoint will be provided as part of the Performance Dashboard Alpha project.
 
-### PRE-ALPHA and EXPERIMENTAL
+
+### Premise
+
+Service publish data in this format, the performance dashboard will consume the data and provide an overview and amalgamated display.
+
+The dashboard is responsible for presentation and collation.
+
+
+### ALPHA and EXPERIMENTAL
 
 The Dashboard Schema expects an array of `metrics` for display.
 
@@ -37,9 +45,3 @@ A bar chart metric is defined as an array of label/value pairs.
 ```
 
 Required fields for a numeric measurement: `["name", "recorded_at", "type",  "data"]`
-
-### Premise
-
-Service publishes data in this format into a dashboard that can provide an overview and amalgamated display.
-
-The dashboard is responsible for presentation.
