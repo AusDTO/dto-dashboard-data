@@ -17,11 +17,20 @@
         "type": "string"
       }
     },
+    "type": {
+      "type": "string",
+      "name": "type",
+      "description": "The type of chart to display.",
+      "enum": ["bar"]
+    },
     "datum": {
       "type": "object",
       "name": "datum",
       "minProperties": 1,
-      "maxProperties": 1
+      "properties": {
+        "label": { "type": "string" },
+        "value": { "type": "string" }
+      }
     },
     "metric": {
       "type": "object",
@@ -30,8 +39,9 @@
         "name":         { "type": "string" },
         "description":  { "type": "string" },
         "recorded_at":  { "$ref": "#/definitions/recorded_at" },
-        "period":       { "type": "string" },
+        "period":       { "type": "string", "enum": ["daily", "weekly", "monthly"]},
         "tags":         { "$ref": "#/definitions/tags" },
+        "type":         { "$ref": "#/definitions/type" },
         "data":         {
           "type": "array",
           "items": {
@@ -41,7 +51,7 @@
           }
         }
       },
-      "required": ["name", "recorded_at", "data"]
+      "required": ["name", "recorded_at", "data", "type"]
     }
   },
   "properties": {
