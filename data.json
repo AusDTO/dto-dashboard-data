@@ -8,7 +8,7 @@
   "url":          "https://gov.au/service",
   "metrics": [
     {
-      "name":           "user-satisfaction",
+      "name":           "User Satisfaction",
       "description":    "% of users reporting satisfaction",
       "recorded_at":    "2016-01-01T01:01:01.111Z",
       "type":           "bar",
@@ -21,7 +21,7 @@
       ]
     },
     {
-      "name":           "cost-per-transaction",
+      "name":           "Cost per Transaction",
       "description":    "$ cost per transaction",
       "recorded_at":    "2016-01-01T01:01:01.111Z",
       "type":           "bar",
@@ -31,6 +31,22 @@
         {"label": "Jan 2016", "value": "20%"},
         {"label": "Feb 2016", "value": "30%"},
         {"label": "Mar 2016", "value": "40%"}
+      ]
+    },
+    {
+      "name":           "Digital Take Up",
+      "description":    "% of users through digital channels",
+      "recorded_at":    "2016-01-01T01:01:01.111Z",
+      "type":           "line",
+      "period":         "weekly",
+      "data": [
+        {
+          "key": "Online",
+          "values": [
+            {"x":"01-Jan-2016","y":"1"},
+            {"x":"08-Jan-2016","y":"2"},
+            {"x":"15-Jan-2016","y":"3"}]
+        }
       ]
     }
   ]

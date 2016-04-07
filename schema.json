@@ -21,16 +21,46 @@
       "type": "string",
       "name": "type",
       "description": "The type of chart to display.",
-      "enum": ["bar"]
+      "enum": ["bar", "line"]
     },
-    "datum": {
+    "bar": {
       "type": "object",
-      "name": "datum",
+      "name": "Bar",
+      "description": "Data format for bar chart",
       "minProperties": 1,
       "properties": {
         "label": { "type": "string" },
         "value": { "type": "string" }
-      }
+      },
+      "required": ["label", "value"]
+    },
+    "lineValue": {
+      "type": "object",
+      "name": "Line Value",
+      "properties": {
+        "x": {
+          "oneOf": [
+            { "type": "string" },
+            { "type": "number" }
+          ]
+        },
+        "y": { "type": "number" }
+      },
+      "required": ["x", "y"]
+    },
+    "line": {
+      "type": "object",
+      "name": "Line",
+      "description": "Data format for line chart",
+      "minProperties": 1,
+      "properties": {
+        "key": { "type": "string" },
+        "values": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/lineValue" }
+        }
+      },
+      "required": ["key", "values"]
     },
     "metric": {
       "type": "object",
@@ -46,7 +76,8 @@
           "type": "array",
           "items": {
             "oneOf": [
-              { "$ref": "#/definitions/datum" }
+              { "$ref": "#/definitions/bar" },
+              { "$ref": "#/definitions/line" }
             ]
           }
         }
