@@ -51,7 +51,7 @@
           }
         }
       },
-      "required": ["name", "recorded_at", "data", "type"]
+      "required": ["name", "recorded_at", "type",  "data"]
     }
   },
   "properties": {
