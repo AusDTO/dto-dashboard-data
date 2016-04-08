@@ -1,11 +1,12 @@
 {
   "version":      "1",
   "updated_at":   "2016-01-01T01:01:01.111Z",
+  "name":         "Citizenship Test Rebooking Service",
+  "url":          "https://gov.au/service",
   "agency":       "DIBP",
   "service":      "Applying for Australian Citizenship",
   "interaction":  "Citizenship Test",
   "activity":     "Reschedule Appointment",
-  "url":          "https://gov.au/service",
   "description":  "Data for bookings for sitting Citizenship Tests",
   "notes":        "",
   "metrics": [

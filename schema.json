@@ -126,11 +126,12 @@
   "required": [
     "version",
     "updated_at",
+    "name",
+    "url",
     "agency",
     "service",
     "interaction",
-    "activity",
-    "url",
+    "activity",    
     "metrics"
   ]
 }
