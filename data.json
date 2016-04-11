@@ -21,7 +21,11 @@
           {"label": "Jan 2016", "value": "20%"},
           {"label": "Feb 2016", "value": "30%"},
           {"label": "Mar 2016", "value": "40%"}
-      ]
+      ],
+      "benchmark": {
+        "effective_at": "2016-01-01T01:01:01.111Z",
+        "value":        "80%"
+      }
     },
     {
       "name":           "Cost per Transaction",

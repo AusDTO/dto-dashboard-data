@@ -62,6 +62,20 @@
       },
       "required": ["key", "values"]
     },
+    "benchmark": {
+      "type": "object",
+      "name": "Benchmark",
+      "description": "A benchmark for referencing",
+      "minProperties": 1,
+      "properties": {
+        "value": { "type": "string" },
+        "effective_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["key", "values"]
+    },
     "metric": {
       "type": "object",
       "name": "metric",
@@ -131,7 +145,7 @@
     "agency",
     "service",
     "interaction",
-    "activity",    
+    "activity",
     "metrics"
   ]
 }
