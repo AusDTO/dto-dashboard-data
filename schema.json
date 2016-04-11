@@ -17,7 +17,7 @@
         "type": "string"
       }
     },
-    "type": {
+    "view": {
       "type": "string",
       "name": "type",
       "description": "The type of chart to display.",
@@ -62,16 +62,32 @@
       },
       "required": ["key", "values"]
     },
+    "benchmark": {
+      "type": "object",
+      "name": "Benchmark",
+      "description": "A benchmark for referencing",
+      "minProperties": 1,
+      "properties": {
+        "value": { "type": "string" },
+        "effective_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["value", "effective_at"]
+    },
     "metric": {
       "type": "object",
       "name": "metric",
       "properties": {
         "name":         { "type": "string" },
+        "metric":       { "type": "string", "enum": ["other", "user-satisfaction", "completion-rate", "digital-take-up", "cost-per-transaction"]},
         "description":  { "type": "string" },
         "recorded_at":  { "$ref": "#/definitions/recorded_at" },
         "period":       { "type": "string", "enum": ["daily", "weekly", "monthly"]},
         "tags":         { "$ref": "#/definitions/tags" },
-        "type":         { "$ref": "#/definitions/type" },
+        "view":         { "$ref": "#/definitions/view" },
+        "benchmark":    { "$ref": "#/definitions/benchmark" },
         "data":         {
           "type": "array",
           "items": {
@@ -82,7 +98,7 @@
           }
         }
       },
-      "required": ["name", "recorded_at", "type",  "data"]
+      "required": ["name", "metric", "recorded_at", "data"]
     }
   },
   "properties": {
@@ -131,7 +147,7 @@
     "agency",
     "service",
     "interaction",
-    "activity",    
+    "activity",
     "metrics"
   ]
 }
