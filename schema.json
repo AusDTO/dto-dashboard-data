@@ -17,6 +17,7 @@
         "type": "string"
       }
     },
+    "view": {
       "type": "string",
       "name": "type",
       "description": "The type of chart to display.",
@@ -80,6 +81,7 @@
       "name": "metric",
       "properties": {
         "name":         { "type": "string" },
+        "metric":       { "type": "string", "enum": ["other", "user-satisfaction", "completion-rate", "digital-take-up", "cost-per-transaction"]},
         "description":  { "type": "string" },
         "recorded_at":  { "$ref": "#/definitions/recorded_at" },
         "period":       { "type": "string", "enum": ["daily", "weekly", "monthly"]},
@@ -96,7 +98,7 @@
           }
         }
       },
-      "required": ["name", "recorded_at", "type",  "data"]
+      "required": ["name", "metric", "recorded_at", "data"]
     }
   },
   "properties": {
