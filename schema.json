@@ -17,7 +17,6 @@
         "type": "string"
       }
     },
-    "type": {
       "type": "string",
       "name": "type",
       "description": "The type of chart to display.",
@@ -85,7 +84,7 @@
         "recorded_at":  { "$ref": "#/definitions/recorded_at" },
         "period":       { "type": "string", "enum": ["daily", "weekly", "monthly"]},
         "tags":         { "$ref": "#/definitions/tags" },
-        "type":         { "$ref": "#/definitions/type" },
+        "view":         { "$ref": "#/definitions/view" },
         "benchmark":    { "$ref": "#/definitions/benchmark" },
         "data":         {
           "type": "array",
