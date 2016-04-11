@@ -74,7 +74,7 @@
           "format": "date-time"
         }
       },
-      "required": ["key", "values"]
+      "required": ["value", "effective_at"]
     },
     "metric": {
       "type": "object",
@@ -86,6 +86,7 @@
         "period":       { "type": "string", "enum": ["daily", "weekly", "monthly"]},
         "tags":         { "$ref": "#/definitions/tags" },
         "type":         { "$ref": "#/definitions/type" },
+        "benchmark":    { "$ref": "#/definitions/benchmark" },
         "data":         {
           "type": "array",
           "items": {
