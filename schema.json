@@ -95,11 +95,6 @@
       "description": "The name of the service",
       "name": "Service"
     },
-    "interaction": {
-      "type": "string",
-      "description": "The name of the interacton this data applies to.",
-      "name": "agency"
-    },
     "metrics": {
       "type": "array",
       "description": "An array of service metrics.",
@@ -118,8 +113,6 @@
     "url",
     "agency",
     "service",
-    "interaction",
-    "activity",
     "metrics"
   ]
 }

@@ -5,8 +5,6 @@
   "url":          "https://gov.au/service",
   "agency":       "DIBP",
   "service":      "Applying for Australian Citizenship",
-  "interaction":  "Citizenship Test",
-  "activity":     "Reschedule Appointment",
   "description":  "Data for bookings for sitting Citizenship Tests",
   "notes":        "",
   "metrics": [
