@@ -23,44 +23,16 @@
       "description": "The type of chart to display.",
       "enum": ["bar", "line"]
     },
-    "bar": {
+    "data": {
       "type": "object",
       "name": "Bar",
       "description": "Data format for bar chart",
       "minProperties": 1,
       "properties": {
         "label": { "type": "string" },
-        "value": { "type": "string" }
+        "value": { "type": "number" }
       },
       "required": ["label", "value"]
-    },
-    "lineValue": {
-      "type": "object",
-      "name": "Line Value",
-      "properties": {
-        "x": {
-          "oneOf": [
-            { "type": "string" },
-            { "type": "number" }
-          ]
-        },
-        "y": { "type": "number" }
-      },
-      "required": ["x", "y"]
-    },
-    "line": {
-      "type": "object",
-      "name": "Line",
-      "description": "Data format for line chart",
-      "minProperties": 1,
-      "properties": {
-        "key": { "type": "string" },
-        "values": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/lineValue" }
-        }
-      },
-      "required": ["key", "values"]
     },
     "benchmark": {
       "type": "object",
@@ -68,7 +40,7 @@
       "description": "A benchmark for referencing",
       "minProperties": 1,
       "properties": {
-        "value": { "type": "string" },
+        "value": { "type": "number" },
         "effective_at": {
           "type": "string",
           "format": "date-time"
@@ -85,6 +57,7 @@
         "description":  { "type": "string" },
         "recorded_at":  { "$ref": "#/definitions/recorded_at" },
         "period":       { "type": "string", "enum": ["daily", "weekly", "monthly"]},
+        "unit":         { "type": "string", "enum": ["dollar", "percent", "number"]},
         "tags":         { "$ref": "#/definitions/tags" },
         "view":         { "$ref": "#/definitions/view" },
         "benchmark":    { "$ref": "#/definitions/benchmark" },
@@ -92,8 +65,7 @@
           "type": "array",
           "items": {
             "oneOf": [
-              { "$ref": "#/definitions/bar" },
-              { "$ref": "#/definitions/line" }
+              { "$ref": "#/definitions/data" }
             ]
           }
         }
