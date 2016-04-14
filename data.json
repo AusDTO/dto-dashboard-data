@@ -1,5 +1,5 @@
 {
-  "version":      "1",
+  "version":      "2",
   "updated_at":   "2016-01-01T01:01:01.111Z",
   "name":         "Citizenship Test Rebooking Service",
   "url":          "https://gov.au/service",
@@ -9,12 +9,9 @@
   "notes":        "",
   "metrics": [
     {
-      "name":           "User Satisfaction",
-      "metric":         "user-satisfaction",
-      "description":    "% of users reporting satisfaction",
-      "recorded_at":    "2016-01-01T01:01:01.111Z",
-      "period":         "monthly",
-      "unit":           "percent",
+      "id":           "user-satisfaction",
+      "recorded_at":  "2016-01-01T01:01:01.111Z",
+      "notes":        "Calculated by survey and helpdesk responses",
       "data": [
           {"label": "2015-12", "value": 50},
           {"label": "2016-01", "value": 20},
@@ -27,11 +24,8 @@
       }
     },
     {
-      "name":           "Cost per Transaction",
-      "metric":         "cost-per-transaction",
-      "description":    "$ cost per transaction",
-      "recorded_at":    "2016-01-01T01:01:01.111Z",
-      "period":         "monthly",
+      "id":           "cost-per-transaction",
+      "recorded_at":  "2016-01-01T01:01:01.111Z",
       "data": [
         {"label": "2015-12", "value": 50},
         {"label": "2016-01", "value": 20},
@@ -40,11 +34,8 @@
       ]
     },
     {
-      "name":           "Digital Take Up",
-      "metric":         "digital-take-up",
-      "description":    "% of users through digital channels",
-      "recorded_at":    "2016-01-01T01:01:01.111Z",
-      "period":         "weekly",
+      "id":           "digital-take-up",
+      "recorded_at":  "2016-01-01T01:01:01.111Z",
       "data": [
         {"label": "2015-12", "value": 50},
         {"label": "2016-01", "value": 20},
@@ -53,12 +44,8 @@
       ]
     },
     {
-      "name":           "Widgets Per Hour",
-      "metric":         "other",
-      "description":    "Number of Widgets Per Hour",
-      "recorded_at":    "2016-01-01T01:01:01.111Z",
-      "view":           "line",
-      "period":         "weekly",
+      "id":           "widgets-per-hour",
+      "recorded_at":  "2016-01-01T01:01:01.111Z",
       "data": [
         {"label": "2015-12", "value": 50},
         {"label": "2016-01", "value": 20},

@@ -17,12 +17,6 @@
         "type": "string"
       }
     },
-    "view": {
-      "type": "string",
-      "name": "type",
-      "description": "The type of chart to display.",
-      "enum": ["bar", "line"]
-    },
     "data": {
       "type": "object",
       "name": "Bar",
@@ -52,15 +46,11 @@
       "type": "object",
       "name": "metric",
       "properties": {
-        "name":         { "type": "string" },
-        "metric":       { "type": "string", "enum": ["other", "user-satisfaction", "completion-rate", "digital-take-up", "cost-per-transaction"]},
-        "description":  { "type": "string" },
+        "id":           { "type": "string" },
         "recorded_at":  { "$ref": "#/definitions/recorded_at" },
-        "period":       { "type": "string", "enum": ["daily", "weekly", "monthly"]},
-        "unit":         { "type": "string", "enum": ["dollar", "percent", "number"]},
         "tags":         { "$ref": "#/definitions/tags" },
-        "view":         { "$ref": "#/definitions/view" },
         "benchmark":    { "$ref": "#/definitions/benchmark" },
+        "notes":        { "type": "string" },
         "data":         {
           "type": "array",
           "items": {
@@ -70,14 +60,14 @@
           }
         }
       },
-      "required": ["name", "metric", "recorded_at", "data"]
+      "required": ["id", "recorded_at", "data"]
     }
   },
   "properties": {
     "version": {
       "type": "string",
       "description": "The version of the dashboard schema to be used",
-      "enum": ["1"]
+      "enum": ["2"]
     },
     "updated_at": {
       "type": "string",
@@ -92,7 +82,7 @@
     },
     "service": {
       "type": "string",
-      "description": "The name of the service",
+      "description": "The name of the service.",
       "name": "Service"
     },
     "metrics": {
