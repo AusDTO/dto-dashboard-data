@@ -17,20 +17,22 @@
         "type": "string"
       }
     },
-    "view": {
-      "type": "string",
-      "name": "type",
-      "description": "The type of chart to display.",
-      "enum": ["bar", "line"]
-    },
     "data": {
       "type": "object",
-      "name": "Bar",
-      "description": "Data format for bar chart",
       "minProperties": 1,
       "properties": {
         "label": { "type": "string" },
         "value": { "type": "number" }
+      },
+      "required": ["label", "value"]
+    },
+    "annotation": {
+      "type": "object",
+      "description": "A single annotation for a data set",
+      "minProperties": 1,
+      "properties": {
+        "label": { "type": "string" },
+        "value": { "type": "string" }
       },
       "required": ["label", "value"]
     },
@@ -44,40 +46,45 @@
         "effective_at": {
           "type": "string",
           "format": "date-time"
-        }
+        },
+        "value": { "type": "number" }
       },
       "required": ["value", "effective_at"]
+    },
+    "units": {
+      "type": "string",
+      "enum": ["$","%","n"]
     },
     "metric": {
       "type": "object",
       "name": "metric",
       "properties": {
-        "name":         { "type": "string" },
-        "metric":       { "type": "string", "enum": ["other", "user-satisfaction", "completion-rate", "digital-take-up", "cost-per-transaction"]},
-        "description":  { "type": "string" },
+        "id":           {
+          "type":     "string",
+          "pattern": "^(\\w|-)+$"
+        },
         "recorded_at":  { "$ref": "#/definitions/recorded_at" },
-        "period":       { "type": "string", "enum": ["daily", "weekly", "monthly"]},
-        "unit":         { "type": "string", "enum": ["dollar", "percent", "number"]},
         "tags":         { "$ref": "#/definitions/tags" },
-        "view":         { "$ref": "#/definitions/view" },
         "benchmark":    { "$ref": "#/definitions/benchmark" },
+        "units":        { "$ref": "#/definitions/units" },
+        "notes":        { "type": "string" },
         "data":         {
           "type": "array",
-          "items": {
-            "oneOf": [
-              { "$ref": "#/definitions/data" }
-            ]
-          }
+          "items": { "$ref": "#/definitions/data" }
+        },
+        "annotations":  {
+          "type": "array",
+          "items": { "$ref": "#/definitions/annotation" }
         }
       },
-      "required": ["name", "metric", "recorded_at", "data"]
+      "required": ["id", "recorded_at", "data", "units"]
     }
   },
   "properties": {
     "version": {
       "type": "string",
       "description": "The version of the dashboard schema to be used",
-      "enum": ["1"]
+      "enum": ["2"]
     },
     "updated_at": {
       "type": "string",
@@ -92,7 +99,7 @@
     },
     "service": {
       "type": "string",
-      "description": "The name of the service",
+      "description": "The name of the service.",
       "name": "Service"
     },
     "metrics": {
@@ -104,7 +111,12 @@
           { "$ref": "#/definitions/metric" }
         ]
       }
-    }
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes or annotations regarding the data",
+      "name": "Notes"
+    },
   },
   "required": [
     "version",

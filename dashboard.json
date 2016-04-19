@@ -1,0 +1,23 @@
+{
+  "version":      "1",
+  "updated_at":   "2016-01-01T01:01:01.111Z",
+  "name":         "Citizenship Test Rebooking Service",
+  "url":          "https://gov.au/service",
+  "agency":       "DIBP",
+  "service":      "Applying for Australian Citizenship",
+  "description":  "Data for bookings for sitting Citizenship Tests",
+  "tags":         [],
+  "notes":        "",
+  "widgets":      [
+    {
+      "id":   "active-accounts",
+      "name": "Active Accounts",
+      "type": "line",
+      "data": ["active-accounts"],
+      "colours": ["red"]
+    }
+  ],
+  "layout":       [
+    ["active-accounts"]
+  ]
+}
