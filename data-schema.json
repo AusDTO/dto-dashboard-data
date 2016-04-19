@@ -67,19 +67,11 @@
         "notes":        { "type": "string" },
         "data":         {
           "type": "array",
-          "items": {
-            "oneOf": [
-              { "$ref": "#/definitions/data" }
-            ]
-          }
+          "items": { "$ref": "#/definitions/data" }
         },
         "annotations":  {
           "type": "array",
-          "items": {
-            "oneOf": [
-              { "$ref": "#/definitions/annotation"  }
-            ]
-          }
+          "items": { "$ref": "#/definitions/annotation" }
         }
       },
       "required": ["id", "recorded_at", "data", "units"]
