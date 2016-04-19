@@ -59,7 +59,10 @@
       "type": "object",
       "name": "metric",
       "properties": {
-        "id":           { "type": "string" },
+        "id":           {
+          "type":     "string",
+          "pattern": "^(\\w|-)+$"
+        },
         "recorded_at":  { "$ref": "#/definitions/recorded_at" },
         "tags":         { "$ref": "#/definitions/tags" },
         "benchmark":    { "$ref": "#/definitions/benchmark" },
