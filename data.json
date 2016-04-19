@@ -5,13 +5,13 @@
   "url":          "https://gov.au/service",
   "agency":       "DIBP",
   "service":      "Applying for Australian Citizenship",
-  "description":  "Data for bookings for sitting Citizenship Tests",
   "notes":        "",
   "metrics": [
     {
       "id":           "user-satisfaction",
       "recorded_at":  "2016-01-01T01:01:01.111Z",
       "notes":        "Calculated by survey and helpdesk responses",
+      "units":        "$",
       "data": [
           {"label": "2015-12", "value": 50},
           {"label": "2016-01", "value": 20},
@@ -20,12 +20,18 @@
       ],
       "benchmark": {
         "effective_at": "2016-01-01T01:01:01.111Z",
-        "value":        80
-      }
+        "value":        80,
+        "tolerance":    5
+      },
+      "annotations": [
+        {"label": "2016-05", "value": "Event A happened"},
+        {"label": "2016-10", "value": "Another event"}
+      ]      
     },
     {
       "id":           "cost-per-transaction",
       "recorded_at":  "2016-01-01T01:01:01.111Z",
+      "units":        "%",
       "data": [
         {"label": "2015-12", "value": 50},
         {"label": "2016-01", "value": 20},
@@ -36,6 +42,7 @@
     {
       "id":           "digital-take-up",
       "recorded_at":  "2016-01-01T01:01:01.111Z",
+      "units":        "%",
       "data": [
         {"label": "2015-12", "value": 50},
         {"label": "2016-01", "value": 20},
@@ -46,6 +53,7 @@
     {
       "id":           "widgets-per-hour",
       "recorded_at":  "2016-01-01T01:01:01.111Z",
+      "units":        "n",
       "data": [
         {"label": "2015-12", "value": 50},
         {"label": "2016-01", "value": 20},
