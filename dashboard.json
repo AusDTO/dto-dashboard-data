@@ -15,9 +15,17 @@
       "type": "line",
       "data": ["active-accounts"],
       "colours": ["red"]
+    },
+    {
+      "id":   "total-signins",
+      "name": "Total Sigins",
+      "type": "bar",
+      "data": ["total-signins"],
+      "colours": ["blue"]
     }
   ],
   "layout":       [
-    ["active-accounts"]
+    ["active-accounts"],
+    ["total-signins"]
   ]
 }

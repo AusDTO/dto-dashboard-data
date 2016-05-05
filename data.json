@@ -1,64 +1,44 @@
 {
   "version":      "2",
   "updated_at":   "2016-01-01T01:01:01.111Z",
-  "name":         "Citizenship Test Rebooking Service",
-  "url":          "https://gov.au/service",
-  "agency":       "DIBP",
-  "service":      "Applying for Australian Citizenship",
+  "namespace":    "dto-dashboard",
   "notes":        "",
-  "metrics": [
+  "datasets": [
     {
-      "id":           "user-satisfaction",
-      "recorded_at":  "2016-01-01T01:01:01.111Z",
-      "notes":        "Calculated by survey and helpdesk responses",
-      "units":        "$",
+      "id":           "browser-usage-chrome",
+      "recorded_at":  "2016-04-19T01:01:01.111Z",
+      "units":        "%",
       "data": [
-          {"label": "2015-12", "value": 50},
-          {"label": "2016-01", "value": 20},
-          {"label": "2016-02", "value": 30},
-          {"label": "2016-03", "value": 40}
+          {"label": "2016-01", "value": 40.15},
+          {"label": "2016-02", "value": 41.70},
+          {"label": "2016-03", "value": 41.15}
       ],
       "benchmark": {
-        "effective_at": "2016-01-01T01:01:01.111Z",
-        "value":        80,
-        "tolerance":    5
+        "effective_at": "2016-04-19T01:01:01.111Z",
+        "value": 99
       },
       "annotations": [
-        {"label": "2016-05", "value": "Event A happened"},
-        {"label": "2016-10", "value": "Another event"}
-      ]      
-    },
-    {
-      "id":           "cost-per-transaction",
-      "recorded_at":  "2016-01-01T01:01:01.111Z",
-      "units":        "%",
-      "data": [
-        {"label": "2015-12", "value": 50},
-        {"label": "2016-01", "value": 20},
-        {"label": "2016-02", "value": 30},
-        {"label": "2016-03", "value": 40}
+        { "label": "2016-01", "value": "Upgraded the thing" }
       ]
     },
     {
-      "id":           "digital-take-up",
-      "recorded_at":  "2016-01-01T01:01:01.111Z",
+      "id":           "browser-usage-safari",
+      "recorded_at":  "2016-04-19T01:01:01.111Z",
       "units":        "%",
       "data": [
-        {"label": "2015-12", "value": 50},
-        {"label": "2016-01", "value": 20},
-        {"label": "2016-02", "value": 30},
-        {"label": "2016-03", "value": 40}
+          {"label": "2016-01", "value": 26.33},
+          {"label": "2016-02", "value": 27.09},
+          {"label": "2016-03", "value": 28.65}
       ]
     },
     {
-      "id":           "widgets-per-hour",
-      "recorded_at":  "2016-01-01T01:01:01.111Z",
-      "units":        "n",
+      "id":           "browser-usage-mozilla",
+      "recorded_at":  "2016-04-19T01:01:01.111Z",
+      "units":        "%",
       "data": [
-        {"label": "2015-12", "value": 50},
-        {"label": "2016-01", "value": 20},
-        {"label": "2016-02", "value": 30},
-        {"label": "2016-03", "value": 40}
+          {"label": "2016-01", "value": 15.52},
+          {"label": "2016-02", "value": 14.27},
+          {"label": "2016-03", "value": 14.11}
       ]
     }
   ]

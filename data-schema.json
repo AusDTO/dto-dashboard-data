@@ -46,8 +46,7 @@
         "effective_at": {
           "type": "string",
           "format": "date-time"
-        },
-        "value": { "type": "number" }
+        }
       },
       "required": ["value", "effective_at"]
     },
@@ -67,6 +66,7 @@
         "tags":         { "$ref": "#/definitions/tags" },
         "benchmark":    { "$ref": "#/definitions/benchmark" },
         "units":        { "$ref": "#/definitions/units" },
+        "description":  { "type": "string" },
         "notes":        { "type": "string" },
         "data":         {
           "type": "array",
@@ -86,6 +86,10 @@
       "description": "The version of the dashboard schema to be used",
       "enum": ["2"]
     },
+    "namespace": {
+      "type": "string",
+      "description": "A unique namespace for the data. Generally a domain or provided as part of the onboarding",
+    },
     "updated_at": {
       "type": "string",
       "format": "date-time",
@@ -102,7 +106,7 @@
       "description": "The name of the service.",
       "name": "Service"
     },
-    "metrics": {
+    "datasets": {
       "type": "array",
       "description": "An array of service metrics.",
       "name": "metric",
@@ -121,10 +125,7 @@
   "required": [
     "version",
     "updated_at",
-    "name",
-    "url",
-    "agency",
-    "service",
-    "metrics"
+    "namespace",
+    "datasets"
   ]
 }

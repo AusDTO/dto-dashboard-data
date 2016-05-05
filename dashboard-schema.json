@@ -27,7 +27,7 @@
         },
         "type":         {
           "type": "string",
-          "enum": ["bar", "line", "fact", "kpi"]
+          "enum": ["bar", "line", "fact", "sparkle", "pie"]
         },
         "name":         { "type": "string" },
         "description":  { "type": "string" },
@@ -71,6 +71,12 @@
       "description": "The name of the service",
       "name": "Service"
     },
+    "description": {
+      "type": "string",
+    },
+    "notes": {
+      "type": "string",
+    },
     "widgets": {
       "type": "array",
       "description": "An array of widgets.",
@@ -89,6 +95,7 @@
     "url",
     "agency",
     "service",
+    "description",
     "widgets",
     "layout"
   ]
