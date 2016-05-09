@@ -13,14 +13,16 @@
       "id":   "active-accounts",
       "name": "Active Accounts",
       "type": "line",
-      "data": ["active-accounts"],
+      "units": "$",
+      "size":  "medium",
+      "datasets": ["active-accounts"],
       "colours": ["red"]
     },
     {
       "id":   "total-signins",
       "name": "Total Sigins",
       "type": "bar",
-      "data": ["total-signins"],
+      "datasets": ["total-signins"],
       "colours": ["blue"]
     }
   ],
